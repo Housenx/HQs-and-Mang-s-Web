@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HQ's</title>
+    <link rel="stylesheet" href="hqstyle.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu"/>
+
+</head>
+<body>
+    <h1 id="titulo">SISTEMA DE QUADRINHOS</h1>
+    <span class="material-symbols-outlined" id="burger" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul> 
+    <span id="botoes">
+        <button id="botaoIniciar">0 - Iniciar</button>
+        <button id="botaoListar">1 - Listar HQ's</button>
+        <button id="botaoAdd">2 - Adicionar HQ</button>
+        <button id="botaoUpd">3 - Atualizar HQ</button>
+        <button id="botaoRemove">4 - Remover HQ</button>
+        <button id="botaoListaPorAutor">5 - Autores</button>
+        <button id="botaoListaPorCategoria">6 - Categorias</button>
+        <button id="botaoPesquisaHQ">7 - Pesquisar HQ</button>
+    </span>
+    </ul>
+        </menu>
+    <h2 id="saida"></h2>
+    <script type="module" src="hqsui.js"></script>
+    <script>
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
