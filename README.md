@@ -1,32 +1,37 @@
-# 📚🔍 Site de Pesquisa de Quadrinhos
+# 📚🔍 Projeto HQs e Mangás - Pesquisa e CRUD
 
 Esse é um projeto proposto pelo **Professor Hendrick** do **Departamento de Computação (DCOMP)** da **Universidade Federal de Sergipe (UFS)**.  
-O objetivo é aplicar os conceitos aprendidos em **Programação Funcional**, desenvolvendo um site de pesquisa de quadrinhos com uso de **funções pré-definidas, CRUD e recursividade**.  
+O objetivo é aplicar os conceitos aprendidos em **Programação Funcional**, desenvolvendo um site de pesquisa e gerenciamento de quadrinhos (**HQs e Mangás**), com uso de **funções pré-definidas, CRUD, recursividade e integração com API externa**.  
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
-- **JavaScript (Programação Funcional)**
+- **JavaScript (Programação Funcional + DOM + Fetch API)**
 - **HTML5**
 - **CSS3 (com media queries para responsividade)**
+- **LocalStorage** (para salvar as HQs/mangás adicionados)
+- **Jikan API** (para buscar dados de mangás online)
 
 ---
 
 ## ⚙️ Estrutura do Projeto
 
-### 📁 Arquivos Principais
+📁 **Arquivos principais:**
 
 - **`hqslib.js`**  
-  Contém as **funções principais** do sistema, além de sua exportação.
+  ➝ Biblioteca de funções: CRUD, filtros por autor/categoria, comparação de IDs, recursividade e manipulação do LocalStorage.
 
 - **`hqsui.js`**  
-  Responsável por integrar as funções com o **HTML** e controlar a interface.
+  ➝ Conecta a interface ao `hqslib.js`.  
+  Lida com botões, eventos do usuário e saída de resultados na tela.
 
 - **`hqs.html`**  
-  Estrutura principal do **site de pesquisa**.
+  ➝ Página principal do site (interface inicial).  
 
 - **`hqstyle.css`**  
-  Define o **estilo visual** da interface.
+  ➝ Estilo visual do site.  
 
 - **`mediaqueries.css`**  
-  Responsável pela **responsividade**, garantindo boa experiência em diferentes dispositivos.
+  ➝ Responsividade para diferentes dispositivos.
+
+---
