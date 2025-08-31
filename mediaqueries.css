@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* Para tablets (exemplo, você pode ajustar) */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    /* Nesta faixa, o menu continua visível e o hambúrguer escondido */
+    span#burger {
+        display: none;
+    }
+    menu#itens {
+        display: block;
+    }
+}
+
+/* Para celulares e telas menores que 768px */
+@media screen and (max-width: 767px) {
+    /* Esconde o menu de navegação */
+    menu#itens {
+        display: none;
+    }
+    
+    /* Mostra o ícone do menu hambúrguer */
+    span#burger {
+        display: block; /* Garante que o ícone seja visível */
+        background-color: rgb(42, 42, 42);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    span#burger:hover {
+        background-color: rgb(61, 61, 61);
+    }
+}
