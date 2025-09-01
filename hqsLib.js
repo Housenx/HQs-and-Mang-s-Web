@@ -28,12 +28,7 @@ const loadHQs = () => {
   return books ? JSON.parse(books) : []
 }
 
-const remove = (l) => {
-  localStorage.removeItem(l)
-  return 'limpo!'
-}
-
-// CRUD (Create, Remove, Update, Delete) ------------------------------------------------------------------------------------
+// CRUD (Create, Read, Update, Delete) ------------------------------------------------------------------------------------
 
 const printar = (l) => {
     const cabecalho = `
@@ -46,7 +41,7 @@ const printar = (l) => {
                 <th>Categoria</th>
             </tr>
         </thead>
-    `;
+    `
     const linhas = l.map(hq => `
         <tr>
             <td>${hq.id}</td>
@@ -55,7 +50,7 @@ const printar = (l) => {
             <td>${hq.ano}</td>
             <td>${hq.categoria}</td>
         </tr>
-    `).join('');
+    `).join('')
     return `<table class="hq-table">${cabecalho}<tbody>${linhas}</tbody></table>`;
 }
 
@@ -121,7 +116,7 @@ const comparar = (id,l) => {
 // Exportação dos codigos para o Ui --------------------------------------------------------------------------------------
 
 export const hqsLib = {
-  loadHQs, remove, printar,
+  loadHQs, printar,
   update, deletar, add,
   SaveHQs, reset, comparar,
   reset1, categorias, listarauthor
