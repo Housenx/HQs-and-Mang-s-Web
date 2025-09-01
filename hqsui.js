@@ -1,5 +1,9 @@
 import { hqsLib } from "./hqsLib.js"
+
 let books = hqsLib.loadHQs()
+
+// Guardando os elementos do HTML em variáveis ------------------------------------------------------
+
 const botaoIniciar = document.getElementById("botaoIniciar")
 const botaoListar = document.getElementById("botaoListar")
 const botaoAdd = document.getElementById("botaoAdd")
@@ -9,6 +13,8 @@ const botaoListaPorAutor = document.getElementById("botaoListaPorAutor")
 const outPut = document.getElementById("saida")
 const botaoListaPorCategoria = document.getElementById("botaoListaPorCategoria")
 const botaoPesquisaHQ = document.getElementById("botaoPesquisaHQ")
+
+// Carrega/reinicia a lista de livros atual puxando a função reset1 da hqsLib ---------------------- 
 
 const iniciar = () => {
     outPut.className = '';
@@ -25,6 +31,8 @@ const listarHQs = () => {
 }
 
 botaoListar.addEventListener("click", listarHQs)
+
+// Exibe no outPut uma sequência de inputs que pegam dados para criar uma nova HQ -----------------
 
 const saidaAdicionaHQ = () => {
     outPut.className = '';
@@ -66,6 +74,8 @@ const saidaAdicionaHQ = () => {
 
 botaoAdd.addEventListener("click", saidaAdicionaHQ)
 
+// Mostra outra sequência de inputs, e dessa vez, para atualizar uma HQ existente ------------------
+
 const saidaAtualizaHQ = () => {
     outPut.className = '';
     outPut.innerHTML = `
@@ -105,6 +115,8 @@ const saidaAtualizaHQ = () => {
 
 botaoUpd.addEventListener("click", saidaAtualizaHQ)
 
+// Exibe um único input que recebe o ID de uma HQ, e então, remove a HQ correspondente ao ID inserido ----------
+
 const saidaRemoveHQ = () => {
     outPut.className = '';
     outPut.innerHTML = `
@@ -122,6 +134,8 @@ const saidaRemoveHQ = () => {
 
 botaoRemove.addEventListener("click", saidaRemoveHQ)
 
+//  um input que recebe o nome de um autor e retorna as HQ's deste -------------------------------------------
+
 const listaPorAutor = () => {
     outPut.className = '';
     outPut.innerHTML = `
@@ -137,20 +151,25 @@ const listaPorAutor = () => {
 
 botaoListaPorAutor.addEventListener("click", listaPorAutor)
 
+// Na entrada, recebe uma categoria e retorna todas as HQ's correspondentes à categoria inserida --------------------
+
 const listaPorCategoria = () => {
     outPut.className = '';
     outPut.innerHTML = `
     Categoria: <input type="text" id="categoriaINPUT"></input>
     <button id="pesquisaButtonC">Pesquisar</button>`
     const listaFunc = () => {
-        const categoria_ = document.getElementById("categoriaINPUT").value
-        const listaPesquisada = books.filter(hq => hqsLib.categorias(categoria_, hq.categoria))
+        const categoria_ = document.getElementById("categoriaINPUT").value.toLowerCase()
+        const listaPesquisada = books.filter(hq => hqsLib.categorias(categoria_, hq.categoria.toLowerCase()))
         outPut.innerHTML = hqsLib.printar(listaPesquisada)
     }
     document.getElementById("pesquisaButtonC").addEventListener("click", listaFunc)
 }
 
 botaoListaPorCategoria.addEventListener("click", listaPorCategoria)
+
+// Exibe um input que recebe o nome de uma HQ, e então, este nome é jogado na API Jikan 
+// (API não oficial do banco de dados do MyAnimeList) e retorna o primeiro objeto de um array de mangás.
 
 const pesquisaHQoutPut = () => {
     outPut.className = '';
