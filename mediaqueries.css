@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-/* Para tablets (exemplo, você pode ajustar) */
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
-    /* Nesta faixa, o menu continua visível e o hambúrguer escondido */
+    
     span#burger {
         display: none;
     }
@@ -11,16 +11,15 @@
     }
 }
 
-/* Para celulares e telas menores que 768px */
+
 @media screen and (max-width: 767px) {
-    /* Esconde o menu de navegação */
     menu#itens {
         display: none;
     }
     
-    /* Mostra o ícone do menu hambúrguer */
+
     span#burger {
-        display: block; /* Garante que o ícone seja visível */
+        display: block; 
         background-color: rgb(42, 42, 42);
         color: white;
         text-align: center;
@@ -31,4 +30,80 @@
     span#burger:hover {
         background-color: rgb(61, 61, 61);
     }
+    #botoes {
+        margin: auto;
+        padding: 10px;
+        display: grid;                 
+        grid-template-columns: 1fr 1fr;  
+        gap: 15px;                  
+        max-width: 700px;           
+    }
+    
+    menu#itens ul {
+        list-style: none;
+        padding: 0;    
+        margin-right: 40px;      
+    }
+    .hq-table thead {
+        display: none;
+    }
+
+    .hq-table, .hq-table tbody, .hq-table tr, .hq-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .hq-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgba(20, 20, 20, 0.7);
+    }
+
+
+.hq-table td {
+    display: flex;                 
+    align-items: baseline;       
+    
+    border-bottom: 1px solid #333;
+    padding: 12px 5px;
+    text-align: left;          
+}
+
+
+.hq-table td::before {
+    font-weight: bold;
+    color: #c7c7c7;
+    text-align: left;
+    padding-right: 8px;           
+    flex-shrink: 0;               
+}
+
+    .hq-table tr td:last-child {
+        border-bottom: none;
+    }
+
+
+
+    .hq-table td:nth-of-type(1)::before { content: "ID:"; }
+    .hq-table td:nth-of-type(2)::before { content: "Título:"; }
+    .hq-table td:nth-of-type(3)::before { content: "Autor:"; }
+    .hq-table td:nth-of-type(4)::before { content: "Ano:"; }
+    .hq-table td:nth-of-type(5)::before { content: "Categoria:"; }
+
+#saida.modo-resultado img {
+    grid-column: 1;
+    grid-row: 1 / span 2; 
+    width: 100%; 
+    height: auto;
+}
+#saida.modo-resultado h2,
+#saida.modo-resultado p {
+    font-size: 1em;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 }
